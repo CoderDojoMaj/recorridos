@@ -45,14 +45,14 @@ class CajaRegistradora
         return total
     end
 
-    def add(amount,value)
+    def add(value,amount)
         i = i4value(value)
         if i != -1
             @slot[i] += amount
         end
     end
 
-    def take(amount,value)
+    def take(value,amount)
         i = i4value(value)
         if i != -1
             if @slot[i] >= amount
@@ -64,19 +64,19 @@ end
 
 
 cr = CajaRegistradora.new
-cr.add(3,0.02)
-cr.add(2,20)
+cr.add(0.02,3)
+cr.add(20,2)
 puts cr
 
-cr.take(1,20)
+cr.take(20,1)
 puts cr
 
-cr.take(1,50)
+cr.take(50,1)
 puts cr
 
-cr.add(12,1)
-cr.add(3,0.5)
+cr.add(1,12)
+cr.add(0.5,3)
 puts cr
 
-cr.take(3,0.5)
+cr.take(0.5,3)
 puts cr
