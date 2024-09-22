@@ -38,7 +38,7 @@ class Linea
     def == ( otraLinea )
         return @longitud == otraLinea.longitud
     end
- end
+end
 
 
 l1 = Linea.new(18)
