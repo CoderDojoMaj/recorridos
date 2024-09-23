@@ -15,11 +15,11 @@ class FrigorificoCombi
     end
 
     def abre_congelador
-        @puerta_frigo = "abierta"
+        @puerta_congelador = "abierta"
     end
 
     def cierra_congelador
-        @puerta_frigo = "cerrada"
+        @puerta_congelador = "cerrada"
     end
 
     def muestra_estado
