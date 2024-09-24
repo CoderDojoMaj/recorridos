@@ -1,5 +1,5 @@
 class Punto:
-    def __init__(self,x,y):
+    def __init__(self,x=0,y=0):
         self.__origenX = x
         self.__origenY = y
 
@@ -9,7 +9,7 @@ class Punto:
         self.__previa_x = x
         self.__previa_y = y
 
-    def mover(self,nueva_x,nueva_y):
+    def mover(self,nueva_x=0,nueva_y=0):
         self.__previa_x = self.__x
         self.__previa_y = self.__y
 
@@ -17,35 +17,20 @@ class Punto:
         self.__y = nueva_y
 
     def irAorigen(self):
-        self.mover(self.__origenX,self.__origenY)
+        self.mover( self.__origenX, self.__origenY )
 
     def muestraPunto(self):
         print( f"({self.__x},{self.__y})" )
 
     def vuelve(self):
-        self.mover(self.__previa_x,self.__previa_y)
+        self.mover( self.__previa_x, self.__previa_y )
 
 
 q = Punto(1,-4)
 q.muestraPunto()
 
-q.mover(10,17)
+q.mover(7,15)
 q.muestraPunto()
 
-q.mover(-3,2)
-q.muestraPunto()
-
-q.vuelve()
-q.muestraPunto()
-
-q.irAorigen()
-q.muestraPunto()
-
-q.vuelve()
-q.muestraPunto()
-
-q.vuelve()
-q.muestraPunto()
-
-q.vuelve()
+q.mover()
 q.muestraPunto()
