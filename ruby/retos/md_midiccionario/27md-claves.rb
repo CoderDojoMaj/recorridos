@@ -28,5 +28,6 @@ mates = {
    'yago' => 9.6,
    'cristina' => 4.3
 }
+
 md = MiDiccionario.new(mates)
-puts "las claves de #{mates}, son #{md.keys}"
+puts "#{md.keys}"

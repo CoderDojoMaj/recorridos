@@ -31,5 +31,6 @@ confirmacion = {
     'yago' => 'sí',
     'cristina' => 'no'
 }
+
 md = MiDiccionario.new(confirmacion)
 puts md.inverso

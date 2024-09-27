@@ -30,5 +30,6 @@ confirmacion = {
     'yago' => 'sí',
     'cristina' => 'no'
 }
+
 md = MiDiccionario.new(confirmacion)
-puts "los valores de #{confirmacion}, son #{md.values}"
+puts "#{md.values}"
