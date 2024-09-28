@@ -27,22 +27,15 @@ class Entero
     end
 
     def descomponer
-        
+        n = @n
+        primo = 7
+        while n % primo == 0
+            puts("#{format('%')} | #{primo}")
+            n = n / primo
+        end
+        puts(1)
     end
 end
 
 
-Entero.new(89).mostrar_primos_menores
-
-
-=begin
-
-    def mostrar_primos_menores
-        @n.times do |i|
-            if Entero.new(i).primo?
-                print "#{i} "
-            end
-        end
-    end
-
-=end
+Entero.new(343).descomponer
