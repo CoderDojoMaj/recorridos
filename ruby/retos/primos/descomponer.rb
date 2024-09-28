@@ -27,13 +27,7 @@ class Entero
     end
 
     def descomponer
-        n = @n
-        primo = 7
-        while n % primo == 0
-            puts("#{format('%')} | #{primo}")
-            n = n / primo
-        end
-        puts(1)
+
     end
 end
 
