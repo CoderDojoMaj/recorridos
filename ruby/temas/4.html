@@ -64,7 +64,7 @@
 
         // Mostrar el nombre del archivo
         const nombreArchivo = obtenerNombreArchivo(archivoGitHub);
-        document.getElementById('nombre-archivo').textContent = `Archivo: ${nombreArchivo}`;
+        document.getElementById('nombre-archivo').textContent = `${nombreArchivo}`;
 
         // Función para cargar y mostrar el contenido del archivo de GitHub
         fetch(archivoGitHub)
