@@ -35,6 +35,13 @@
 <body>
 <h1>Atributos</h1>
 <p>Definen la forma de los objetos de la clase. Empiezan con @</p>
+
+    <!-- Contenedor para el bloque de código y el botón de copiar -->
+    <div class="code-container">
+        <button class="copy-button" onclick="copiarCodigo()">Copiar</button>
+        <pre><code id="codigo-github" class="language-ruby"></code></pre>
+    </div>
+
     <!-- JavaScript para cargar el archivo de GitHub y habilitar el botón de copiar -->
     <script>
         // URL cruda del archivo de GitHub
