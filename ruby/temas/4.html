@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <!-- Componente para Ruby -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-ruby.min.js"></script>
-    <!-- Estilos para el botón de copiar -->
+    <!-- Estilos para el botón de copiar y el nombre del archivo -->
     <style>
         .code-container {
             position: relative;
@@ -30,22 +31,40 @@
         .copy-button:active {
             background-color: #0056b3;
         }
+        .file-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
-<h1>Atributos</h1>
-<p>Definen la forma de los objetos de la clase. Empiezan con @</p>
+    <h1>Atributos</h1>
+    <p>Definen la forma de los objetos de la clase.</p>
+    <p>Empiezan con @</p>
+
+    <!-- Nombre del archivo de código -->
+    <div id="nombre-archivo" class="file-name"></div>
 
     <!-- Contenedor para el bloque de código y el botón de copiar -->
     <div class="code-container">
         <button class="copy-button" onclick="copiarCodigo()">Copiar</button>
-        <pre><code id="codigo-github" class="language-ruby"></code></pre>
+        <pre><code id="codigo-github" class="language-ruby">Cargando...</code></pre>
     </div>
 
     <!-- JavaScript para cargar el archivo de GitHub y habilitar el botón de copiar -->
     <script>
         // URL cruda del archivo de GitHub
         const archivoGitHub = 'https://raw.githubusercontent.com/CoderDojoMaj/recorridos/refs/heads/main/ruby/temas/4.rb';
+
+        // Función para extraer el nombre del archivo de la URL
+        function obtenerNombreArchivo(url) {
+            const partesUrl = url.split('/');
+            return partesUrl[partesUrl.length - 1]; // Último segmento de la URL es el nombre del archivo
+        }
+
+        // Mostrar el nombre del archivo
+        const nombreArchivo = obtenerNombreArchivo(archivoGitHub);
+        document.getElementById('nombre-archivo').textContent = `Archivo: ${nombreArchivo}`;
 
         // Función para cargar y mostrar el contenido del archivo de GitHub
         fetch(archivoGitHub)
@@ -57,7 +76,10 @@
                 // Reprocesar el bloque de código para resaltarlo con Prism
                 Prism.highlightAll();
             })
-            .catch(error => console.error('Error al cargar el archivo:', error));
+            .catch(error => {
+                console.error('Error al cargar el archivo:', error);
+                document.getElementById('codigo-github').textContent = 'Error al cargar el código.';
+            });
 
         // Función para copiar el contenido del código
         function copiarCodigo() {
