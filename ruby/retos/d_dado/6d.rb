@@ -11,10 +11,3 @@ class Dado
         puts @cara_superior
     end
 end
-
-
-d = Dado.new
-d.muestra_cara_superior
-
-d.tira
-d.muestra_cara_superior

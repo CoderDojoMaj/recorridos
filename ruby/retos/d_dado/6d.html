@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cargar código desde GitHub (Prism.js)</title>
+    <link href="../../../recorridos.css" rel="stylesheet" />
+    <link href="../../../codestyler/css/CodeStyler.css" rel="stylesheet" />
     <!-- Tema de GitHub para Prism -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-ghcolors.min.css" rel="stylesheet" />
     <!-- Prism JavaScript -->
@@ -12,9 +10,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-ruby.min.js"></script>
 </head>
 <body>
-    <h1>Atributos</h1>
-    <p>Definen la forma de los objetos de la clase.</p>
-    <p>Empiezan con @</p>
+<h1>6d. Dado</h1>
+<p>Implementa una clase que represente un dado con un método que simule tirarlo, eso es, que modifique el número de la cara superior.</p>
+
+<p>Para generar un número aleatorio entre 1 y 6:
+<pre>rand(1..6)</pre></p>
 
     <!-- Nombre del archivo de código -->
     <div id="nombre-archivo" class="file-name"></div>
@@ -28,7 +28,7 @@
     <!-- JavaScript para cargar el archivo de GitHub y habilitar el botón de copiar -->
     <script>
         // URL cruda del archivo de GitHub
-        const archivoGitHub = '4.rb';
+        const archivoGitHub = '6d_test.rb';
 
         // Función para extraer el nombre del archivo de la URL
         function obtenerNombreArchivo(url) {
@@ -73,5 +73,6 @@
         }
     </script>
 
+<script src="./js/codestyler.js"></script>
 </body>
 </html>
