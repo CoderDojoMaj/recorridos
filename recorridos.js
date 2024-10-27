@@ -8,16 +8,12 @@ function obtenerNombreArchivo(url) {
     return partesUrl[partesUrl.length - 1]; // Último segmento de la URL es el nombre del archivo
 }
 
-// Mostrar el nombre del archivo
-const nombreArchivo = obtenerNombreArchivo(archivoGitHub);
-document.getElementById('nombre-archivo').textContent = `${nombreArchivo}`;
-
 // Función para cargar y mostrar el contenido del archivo de GitHub
 fetch(archivoGitHub)
     .then(response => response.text())
     .then(data => {
         // Insertar el código en el contenedor
-        document.getElementById('codigo-github').textContent = data;
+        document.getElementById('ejemplo2').textContent = data;
 
         // Reprocesar el bloque de código para resaltarlo con Prism
         Prism.highlightAll();
