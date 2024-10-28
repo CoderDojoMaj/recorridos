@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cargar Archivo Local</title>
+</head>
+<body>
+
+<pre data-code="17d2.rb">Cargando...</pre>
+
+<script>
+function getCode(resource, preElement) {
+    fetch(resource)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            preElement.textContent = data;
+        })
+        .catch(error => {
+            console.error('Error al cargar el archivo:', error);
+            preElement.textContent = 'Error al cargar el código.';
+        });
+}
+
+// Ejecutar cuando la página esté lista
+window.onload = function() {
+    var preElements = document.getElementsByTagName('pre');
+    for (var i = 0; i < preElements.length; i++) {
+        var code = preElements[i].getAttribute("data-code");
+        if (code) {
+            getCode(code, preElements[i]);
+        }
+    }
+};
+</script>
+
+</body>
+</html>
