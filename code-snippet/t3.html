@@ -2,23 +2,97 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Cargar Archivo Local</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<style>
+    pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: #666;
+    page-break-inside: avoid;
+    font: normal normal 14px/16px "Courier New", Courier, Monospace;
+    line-height: 1.0;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    padding: .5em 1em;
+    display: block;
+    word-wrap: break-word;
+    margin-left: 20px;
+    overflow: auto;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    counter-reset: line;
+}
+
+code {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #bcbec0;
+    padding: 2px;
+    font: normal normal 14px / 16px "Courier New", Courier, Monospace;
+}
+
+pre code {
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border: 0px;
+    padding: 0px;
+    font: normal normal 14px / 16px "Courier New", Courier, Monospace;
+}
+
+pre .line-number {
+    user-select: none;
+    float: left;
+    margin: 0 1em 0 -1em;
+    border-right: 1px solid;
+    text-align: right;
+}
+
+pre .line-number span {
+    display: block;
+    padding: 0 .5em 0 1em;
+}
+
+pre .cl {
+    display: block;
+    clear: both;
+}
+
+</style>
 </head>
 <body>
 
-<pre data-code="17d2.rb">Cargando...</pre>
+<pre data-code="https://raw.githubusercontent.com/CoderDojoMaj/recorridos/refs/heads/main/ruby/retos/d_dado/17d2.rb" class="language-ruby line-numbers"></pre>
+
+<pre class="language-c line-numbers">
+int a = 3;
+int b = 5;</pre>
+
+This is <code class="language-ruby">rand(1..6)</code> code.
+
+<pre class="language-c line-numbers">
+int a = 23;
+int b = 15;</pre>
+
+<pre data-code="https://raw.githubusercontent.com/CoderDojoMaj/recorridos/refs/heads/main/ruby/retos/d_dado/12d.rb" class="language-ruby line-numbers">Cargando...</pre>
 
 <script>
+// Función para cargar código desde una URL
 function getCode(resource, preElement) {
     fetch(resource)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
+        .then(response => response.text())
         .then(data => {
-            preElement.textContent = data;
+            // Eliminar líneas en blanco al principio y al final
+            let cleanData = data.trim();
+
+            // Insertar el código limpio en el <pre>
+            preElement.textContent = cleanData;
+
+            // Aplicar resaltado de sintaxis con Prism.js y añadir números de línea
+            Prism.highlightElement(preElement);
         })
         .catch(error => {
             console.error('Error al cargar el archivo:', error);
@@ -26,17 +100,25 @@ function getCode(resource, preElement) {
         });
 }
 
-// Ejecutar cuando la página esté lista
-window.onload = function() {
+// Función para cargar códigos desde URLs en los elementos <pre> con atributo "data-code"
+function getCodes() {
     var preElements = document.getElementsByTagName('pre');
     for (var i = 0; i < preElements.length; i++) {
         var code = preElements[i].getAttribute("data-code");
         if (code) {
+            // Cargar el código desde la URL
             getCode(code, preElements[i]);
         }
     }
-};
-</script>
+}
 
+// Función principal que se ejecuta al cargar la página
+function go() {
+    // Cargar códigos remotos en los elementos con data-code
+    getCodes();
+}
+
+go();
+</script>
 </body>
 </html>

@@ -13,7 +13,7 @@ fetch(archivoGitHub)
     .then(response => response.text())
     .then(data => {
         // Insertar el código en el contenedor
-        document.getElementById('ejemplo2').textContent = data;
+        document.getElementById('codigo-github').textContent = data;
 
         // Reprocesar el bloque de código para resaltarlo con Prism
         Prism.highlightAll();
