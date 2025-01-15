@@ -40,4 +40,4 @@ class Entero
 end
 
 
-Entero.new(169).mostrar_cuadrados_perfectos_menores
+Entero.new(2030).mostrar_cuadrados_perfectos_menores
