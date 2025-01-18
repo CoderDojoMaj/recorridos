@@ -1,0 +1,3 @@
+dime tu edad: 10
+dime la edad de tu amigo: 9
+Tienes más años más que tu amigo
