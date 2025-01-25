@@ -1,4 +1,0 @@
-viajes disponibles: 20
-viajes disponibles: 10
-viajes disponibles: 9
-viajes disponibles: 6
