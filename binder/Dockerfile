@@ -4,7 +4,7 @@ FROM jupyter/minimal-notebook:latest
 # Install Ruby and build-essential without sudo
 USER root
 RUN apt-get update && apt-get install -y \
-    libzmq5 \
+    libzmq3-dev\
     ruby-full \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
