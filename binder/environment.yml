@@ -1,0 +1,11 @@
+name: ruby-env
+channels:
+  - defaults
+dependencies:
+  - ruby
+  - libgcc
+  - libstdcxx-ng
+  - make
+  - gcc
+  - gxx
+  - bundler
