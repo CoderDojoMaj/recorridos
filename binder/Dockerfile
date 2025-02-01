@@ -1,7 +1,7 @@
 FROM jupyter/base-notebook
 
 # Install Ruby and Bundler
-RUN apt-get update && apt-get install -y ruby-full build-essential
+RUN sudo apt-get update && sudo apt-get install -y ruby-full build-essential
 RUN gem install bundler
 
 # Install IRuby and dependencies
