@@ -43,7 +43,18 @@ const recorridos = {
             { label: 'Diccionarios' },
             { label: 'Parámetros requeridos, por defecto y opcionales' },
             { label: 'Keyword arguments' },
-            { label: 'Ficheros' },
+            { 
+                label: 'Ficheros',
+                secciones:
+                [
+                    { label: 'Lectura' },
+                    { label: 'Escritura' },
+                    { label: 'Añadir' },
+                    { label: 'Comprobar si existe un fichero' },
+                    { label: 'Datos separados por comas' },
+                    { label: 'Objetos' }
+                ]
+            },
 /*            {
                 label: 'Excepciones',
                 secciones: [
@@ -315,7 +326,11 @@ const retos = {
     '28a2': { label: "Gráfico con números", recorrido: "POO", tema: 28, coleccion: "linea",prev:"28a1"},
     '28a3': { label: "Gráfico con chars diferentes", recorrido: "POO", tema: 28, coleccion: "linea",prev:"28a2"},
     '28est': { label: "Media, mediana y moda con esponja", recorrido: "POO", tema: 28, coleccion: "estadistica",prev:"27est-moda2"},
-    '30c1': { label: "Leer saldo de fichero", recorrido: "POO", tema: 30, coleccion: "cuenta",prev:"28c"},
+    '30c1': { label: "Leer saldo de fichero", recorrido: "POO", tema: 30, seccion: 1, coleccion: "cuenta",prev:"28c"},
+    '30c2': { label: "Escribir el saldo", recorrido: "POO", tema: 30, seccion: 2, coleccion: "cuenta",prev:"30c1"},
+    '30c3': { label: "Añadir movimientos a un fichero", recorrido: "POO", tema: 30, seccion: 3, coleccion: "cuenta",prev:"30c2"},
+    '30c4': { label: "Comprobar si existe el fichero de saldo", recorrido: "POO", tema: 30, seccion: 4, coleccion: "cuenta",prev:"30c3"},
+    '306cr': { label: "Guardar la caja en un fichero", recorrido: "POO", tema: 30, seccion: 6, coleccion: "registradora",prev:"28cr3"},
 };
 
 for(let retoId in retos)
