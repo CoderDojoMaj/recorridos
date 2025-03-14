@@ -22,7 +22,7 @@ ol = document.getElementById("temas");
 for(let i=0; i<recorrido.temas.length; i++ )
 {
     a = document.createElement("a");
-    a.href = "tema.html?recorrido=" + id + "&lenguaje=" + lenguaje + "&tema=" + i;
+    a.href = "tema.html?recorrido=" + id + "&lenguaje=" + lenguaje + "&tema=" + (i+1);
     a.textContent = recorrido.temas[i].label
     li = document.createElement("li");
     li.appendChild(a);
@@ -33,7 +33,7 @@ for(let i=0; i<recorrido.temas.length; i++ )
         for(let j=0; j<recorrido.temas[i].secciones.length; j++ )
         {
             a2 = document.createElement("a");
-            a2.href = "tema.html?recorrido=" + id + "&lenguaje=" + lenguaje + "&tema=" + i + "&seccion=" + (j+1);
+            a2.href = "tema.html?recorrido=" + id + "&lenguaje=" + lenguaje + "&tema=" + (i+1) + "&seccion=" + (j+1);
             a2.textContent = recorrido.temas[i].secciones[j].label
             li2 = document.createElement("li");
             li2.appendChild(a2);
