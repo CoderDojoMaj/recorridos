@@ -201,7 +201,7 @@ const retos = {
     '23le-sumaListas': { label: "Operador +", recorrido: "POO", tema: 23, coleccion: "listaenteros"},
     '23le-sumaListas2': { label: "Permitiendo un array o una Lista como parámetro", recorrido: "POO", tema: 23, coleccion: "listaenteros"},
     '23fr': { label: "Producto de fracciones", recorrido: "POO", tema: 23, coleccion: "fracción"},
-    '23p': { label: "Operador suma", recorrido: "POO", tema: 23, coleccion: "punto",prev:"19p3"},
+    '23p': { label: "Operador suma", recorrido: "POO", tema: 23, coleccion: "punto",prev:"22p-path"},
     '23le-restaListas': { label: "Operador -", recorrido: "POO", tema: 23, coleccion: "listaenteros"},
     '23a-relacionales': { label: "Operadores relacionales", recorrido: "POO", tema: 23, coleccion: "linea",prev:"21a"},
     '29a1': { label: "Gráfico con key arguments", recorrido: "POO", tema: 29, coleccion: "linea",prev:"28a3"},
@@ -293,6 +293,8 @@ const retos = {
     '19p1': { label: "¿En la diagonal?", recorrido: "POO", tema: 19, coleccion: "punto",prev:"18p"},
     '19p2': { label: "¿En el origen?", recorrido: "POO", tema: 19, coleccion: "punto",prev:"19p1"},
     '19p3': { label: "¿En este cuadrante?", recorrido: "POO", tema: 19, coleccion: "punto",prev:"19p2"},
+    '22p-back': { label: "Volver hasta el origen", recorrido: "POO", tema: 22, coleccion: "punto",prev:"19p3"},
+    '22p-path': { label: "Path y distancias", recorrido: "POO", tema: 22, seccion: 1, coleccion: "punto",prev:"22p-back"},
     '19n': { label: "¿Es par?", recorrido: "POO", tema: 19, coleccion: "números"},
     '19f': { label: "¿Temperaturas recomendadas?", recorrido: "POO", tema: 19, coleccion: "combi",prev:"17f"},
     '19b': { label: "¿Último viaje?", recorrido: "POO", tema: 19, coleccion: "bonobús",prev:"18b"},
@@ -342,17 +344,19 @@ const retos = {
     '30c4': { label: "Comprobar si existe el fichero de saldo", recorrido: "POO", tema: 30, seccion: 4, coleccion: "cuenta",prev:"30c3"},
     '306cr': { label: "Guardar la caja en un fichero", recorrido: "POO", tema: 30, seccion: 6, coleccion: "registradora",prev:"28cr3"},
     'gb1': { label: "Guerra de barcos", recorrido: "POO", tema: 22, seccion: 5, coleccion: "guerra-de-barcos"},
-    '22.1.to_s': { label: "Mostrar", recorrido: "POO", tema: 22, seccion: 1, coleccion: "matrices"},
-    '22.2.traspuesta': { label: "Traspuesta", recorrido: "POO", tema: 22, seccion: 1, coleccion: "matrices",prev:'22.1.to_s'},
+    '22.1.str': { label: "Mostrar", recorrido: "POO", tema: 22, seccion: 1, coleccion: "matrices"},
+    '22.2.traspuesta': { label: "Traspuesta", recorrido: "POO", tema: 22, seccion: 1, coleccion: "matrices",prev:'22.1.str'},
     '23.1.suma': { label: "Suma", recorrido: "POO", tema: 23, coleccion: "matrices",prev:'22.2.traspuesta'},
     '23.2.resta': { label: "Resta", recorrido: "POO", tema: 23, coleccion: "matrices",prev:'23.1.suma'},
-    '23.3.mul': { label: "Producto", recorrido: "POO", tema: 23, coleccion: "matrices",prev:'23.2.resta'},
-    '30.5.1.leerfichero': { label: "Leer de fichero", recorrido: "POO", tema: 30, seccion: 5, coleccion: "matrices",prev:'23.3.mul'},
+    '23.3.mul0': { label: "Producto (1/2)", recorrido: "POO", tema: 23, coleccion: "matrices",prev:'23.2.resta'},
+    '23.3.mul1': { label: "Producto (2/2)", recorrido: "POO", tema: 23, coleccion: "matrices",prev:'23.3.mul0'},
+    '30.5.1.leerfichero': { label: "Leer de fichero", recorrido: "POO", tema: 30, seccion: 5, coleccion: "matrices",prev:'23.3.mul1'},
     '30.5.2.escribirfichero': { label: "Escribir en fichero", recorrido: "POO", tema: 30, seccion: 5, coleccion: "matrices",prev:'30.5.1.leerfichero'},
     'tv1': { label: "Toros y vacas", recorrido: "POO", tema: 22, seccion: 5, coleccion: "toros_y_vacas"},
     'pe1': { label: "¿Palabra encadenada?", recorrido: "POO", tema: 22, coleccion: "palabras-encadenadas"},
     'pe2': { label: "Encadenando palabras", recorrido: "POO", tema: 22, seccion: 1, coleccion: "palabras-encadenadas",prev:'pe1'},
     'pe3': { label: "Juego", recorrido: "POO", tema: 22, seccion: 1, coleccion: "palabras-encadenadas",prev:'pe2'},
+    '3er': { label: "3 en raya", recorrido: "POO", tema: 22, seccion: 5, coleccion: "tres-en-raya"},
 };
 
 for(let retoId in retos)
@@ -395,6 +399,7 @@ const colecciones = {
     'matrices':{label:'Matrices'},
     'toros_y_vacas':{label:'Toros y vacas'},
     'palabras-encadenadas':{label:'Palabras encadenadas'},
+    'tres-en-raya':{label:'Tres en raya'},
     };
 
 function insert(id,content)
